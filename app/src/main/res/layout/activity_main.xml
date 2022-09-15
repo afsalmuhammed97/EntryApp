@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginStart="3dp"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizotTop"
+        app:layout_constraintEnd_toStartOf="@+id/bt_add"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizotTop"
+        app:layout_constraintEnd_toStartOf="@+id/bt_delete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_delete"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="delete"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizotTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_add"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/left_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideCenterLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideHorizotTop" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/right_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideCenterRight"
+        app:layout_constraintTop_toBottomOf="@+id/guideHorizotTop" />
+
+    <Button
+        android:id="@+id/coppy_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+        android:drawablePadding="0dp"
+        android:text="@string/coppy"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/button_coppy_left"
+        app:layout_constraintEnd_toStartOf="@+id/guideCenterRight"
+        app:layout_constraintStart_toStartOf="@+id/guideCenterLeft"
+        app:layout_constraintTop_toBottomOf="@+id/guideHorizotTop" />
+
+    <Button
+        android:id="@+id/button_coppy_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_left_24"
+        android:drawablePadding="0dp"
+        android:text="@string/coppy"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/button_move_right"
+        app:layout_constraintEnd_toStartOf="@+id/guideCenterRight"
+        app:layout_constraintStart_toStartOf="@+id/guideCenterLeft"
+        app:layout_constraintTop_toBottomOf="@+id/coppy_right"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/button_move_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+        android:drawablePadding="0dp"
+        android:text="@string/move"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/button_move_left"
+        app:layout_constraintEnd_toStartOf="@+id/guideCenterRight"
+        app:layout_constraintStart_toStartOf="@+id/guideCenterLeft"
+        app:layout_constraintTop_toBottomOf="@+id/button_coppy_left" />
+
+    <Button
+        android:id="@+id/button_move_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_left_24"
+        android:drawablePadding="0dp"
+        android:text="@string/move"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/button_swap"
+        app:layout_constraintEnd_toStartOf="@+id/guideCenterRight"
+        app:layout_constraintStart_toStartOf="@+id/guideCenterLeft"
+        app:layout_constraintTop_toBottomOf="@+id/button_move_right" />
+
+    <TextView
+        android:id="@+id/button_swap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryVariant"
+        android:padding="6dp"
+        android:text="@string/swap"
+
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:drawableEndCompat="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+        app:drawableStartCompat="@drawable/ic_baseline_keyboard_double_arrow_left_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideCenterRight"
+        app:layout_constraintStart_toStartOf="@+id/guideCenterLeft"
+        app:layout_constraintTop_toBottomOf="@+id/button_move_left" />
+
+
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/button7"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/swap"-->
+    <!--        android:textAllCaps="false"-->
+
+
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/guideCenterRight"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/guideCenterLeft"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/button6"-->
+    <!--        android:drawableStart="@drawable/ic_baseline_keyboard_double_arrow_left_24"-->
+    <!--       />-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideCenterRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideCenterLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHorizotTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
